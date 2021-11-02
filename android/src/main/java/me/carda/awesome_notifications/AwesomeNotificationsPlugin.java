@@ -93,6 +93,7 @@ public class AwesomeNotificationsPlugin
     public static Boolean debug = false;
     public static Boolean hasGooglePlayServices;
     private static String mainTargetClassName;
+    private static int hashCodeMessage = -1;
     public static NotificationLifeCycle appLifeCycle = NotificationLifeCycle.AppKilled;
 
     private static final String TAG = "AwesomeNotificationsPlugin";
@@ -311,7 +312,10 @@ public class AwesomeNotificationsPlugin
     private void onBackgroundBroadcastAction(Context context,Intent intent) {
 
         Serializable serializable = intent.getSerializableExtra(Definitions.EXTRA_BROADCAST_MESSAGE);
-
+        if(hashCodeMessage == serializable.hashCode()){
+            return;
+        }
+        hashCodeMessage = serializable.hashCode();
         Intent serviceIntent = new Intent(context, AwesomeNotificationMessagingBackgroundService.class);
         serviceIntent.putExtra("action", serializable);
         AwesomeNotificationMessagingBackgroundService.enqueueMessageProcessing(context, serviceIntent);

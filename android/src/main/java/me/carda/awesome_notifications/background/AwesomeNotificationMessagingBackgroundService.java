@@ -12,8 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.core.app.JobIntentService;
 import io.flutter.embedding.engine.FlutterShellArgs;
 import java.util.Collections;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 
 public class AwesomeNotificationMessagingBackgroundService extends JobIntentService {
@@ -21,7 +23,7 @@ public class AwesomeNotificationMessagingBackgroundService extends JobIntentServ
   static final int JOB_ID = 2021;
 
 
-  private static final List<Intent> messagingQueue = Collections.synchronizedList(new LinkedList<>());
+  private static final Set<Intent> messagingQueue = Collections.synchronizedSet(new LinkedHashSet<>());
 
   /** Background Dart execution context. */
   private static AwesomeNotificationMessagingBackgroundExecutor flutterBackgroundExecutor;
