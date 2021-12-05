@@ -7,8 +7,6 @@ import java.io.Serializable;
 import java.util.Map;
 
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import io.flutter.Log;
-import me.carda.awesome_notifications.background.AwesomeNotificationMessagingBackgroundService;
 import me.carda.awesome_notifications.notifications.enumeratos.NotificationLifeCycle;
 import me.carda.awesome_notifications.notifications.managers.DismissedManager;
 import me.carda.awesome_notifications.notifications.models.returnedData.ActionReceived;
