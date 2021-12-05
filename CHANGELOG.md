@@ -1,3 +1,5 @@
+## [0.0.6+10]
+* Fixed click push notification button
 ## [0.0.6+9]
 * Fixed null reference for main class inside NotificationBuilder.java
 ## [0.0.6+8]
