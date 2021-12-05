@@ -13,8 +13,6 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.support.v4.media.session.MediaSessionCompat;
 
-import io.flutter.Log;
-
 //import com.google.android.gms.tasks.OnCompleteListener;
 //import com.google.android.gms.tasks.Task;
 //import com.google.firebase.FirebaseApp;
@@ -32,6 +30,7 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.lifecycle.*;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
+import io.flutter.Log;
 import io.flutter.embedding.engine.FlutterShellArgs;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.embedding.engine.plugins.activity.ActivityAware;

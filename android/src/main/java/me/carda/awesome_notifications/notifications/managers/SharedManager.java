@@ -3,9 +3,7 @@ package me.carda.awesome_notifications.notifications.managers;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-
 import io.flutter.Log;
-
 import java.security.*;
 import java.math.*;
 

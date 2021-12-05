@@ -5,7 +5,8 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import io.flutter.Log;
+import android.os.Build;
+import android.util.Log;
 
 import java.util.Calendar;
 import java.util.List;
@@ -283,8 +284,7 @@ public class NotificationScheduler extends AsyncTask<String, Void, Calendar> {
     private static void _removeFromAlarm(Context context, int id) {
         if(context != null){
             Intent intent = new Intent(context, ScheduledNotificationReceiver.class);
-
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE );
             AlarmManager alarmManager = getAlarmManager(context);
             alarmManager.cancel(pendingIntent);
         }

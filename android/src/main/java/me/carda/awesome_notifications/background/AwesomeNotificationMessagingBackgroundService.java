@@ -7,9 +7,10 @@ package me.carda.awesome_notifications.background;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
-import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.core.app.JobIntentService;
+
+import io.flutter.Log;
 import io.flutter.embedding.engine.FlutterShellArgs;
 import java.util.Collections;
 import java.util.LinkedHashSet;
