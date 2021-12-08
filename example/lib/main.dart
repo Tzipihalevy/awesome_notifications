@@ -151,6 +151,7 @@ void main() async {
           vibrationPattern: lowVibrationPattern,
           importance: NotificationImportance.High)
     ],
+    backgroundClickAction: onBackGroundClick,
     debug: true
   );
 
@@ -331,4 +332,8 @@ class _AppState extends State<App> {
       ),
     );
   }
+}
+
+onBackGroundClick(ReceivedAction action){
+  print("back ground click action: $action}");
 }
