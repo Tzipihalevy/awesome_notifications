@@ -465,7 +465,7 @@ public class NotificationBuilder {
                             context,
                             pushNotification.content.id,
                             actionIntent,
-                            PendingIntent.FLAG_UPDATE_CURRENT
+                            PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE
                     );
                 }
             }
