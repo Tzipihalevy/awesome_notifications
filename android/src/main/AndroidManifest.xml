@@ -2,6 +2,7 @@
   package="me.carda.awesome_notifications">
 
     <!-- Samsung Badge -->
+    <uses-permission android:name="android.permission.BROADCAST_CLOSE_SYSTEM_DIALOGS" />
     <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
     <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE" />
 
