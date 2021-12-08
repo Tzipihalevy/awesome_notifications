@@ -496,6 +496,7 @@ public class AwesomeNotificationsPlugin
         }
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void onMethodCall(final MethodCall call, final Result result) {
 
@@ -595,6 +596,7 @@ public class AwesomeNotificationsPlugin
                     return;
 
                 case Definitions.CHANNEL_METHOD_START_BACKGROUND:
+                    if(!(call.arguments instanceof Map<?,?>)) return;
                     Log.i(TAG, "called CHANNEL_METHOD_START_BACKGROUND");
                     Map<String, Object> arguments = ((Map<String, Object>) call.arguments);
 
