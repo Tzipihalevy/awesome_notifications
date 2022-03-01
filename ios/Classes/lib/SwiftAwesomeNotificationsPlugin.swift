@@ -195,7 +195,9 @@ public class SwiftAwesomeNotificationsPlugin: NSObject, FlutterPlugin, UNUserNot
 
         
             print("START INVOKE METHOD CHANNEL_METHOD_ACTION_RECEIVED_BACKGROUND_IOS")
-            let payload:[String: String?]? = dictFromJSON?.mapValues { item in item != nil ? String(describing:item) : nil }
+            
+            let payload:[String: String?]? = (dictFromJSON?["content"] as? [String:Any?])?.mapValues { item in item != nil ? "\(item ?? "")" : nil }
+            
             actionReceived?.payload = payload
             self.flutterChannel!.invokeMethod(Definitions.CHANNEL_METHOD_ACTION_RECEIVED_BACKGROUND_IOS, arguments: actionReceived?.toMap())
 //            UIApplication.endBackgroundTask(self)
